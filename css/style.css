@@ -1,0 +1,390 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Open+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Ubuntu:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
+/* goole font */
+:root{
+    --mf: 'Oswald', sans-serif;
+    --sf: 'Open Sans', sans-serif;
+    --brand1: #ff0000;
+    --brand2: #e23e38;
+    --cl-1: #353535;
+    --cl2: #f1f1f1;
+    --icon: #1da0f2;
+    --overly-1: rgba(226, 62, 56, .7);
+    --overly-2: rgba(15, 15, 15, 0.7);
+}
+
+/* root css ends */
+
+/*====================
+ common css starts 
+ =====================*/
+*{
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+  font-size: 14px;  
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+img{
+    vertical-align: middle;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+
+/* common class */
+.ffo{
+    font-family: 'Oswald', sans-serif;
+}
+.ffs{
+    font-family: var(--sf);
+}
+.nav-link:hover{
+    background-color: var(--cl2);
+    border-bottom: 4px solid var(--brand2) !important;
+    color: var(--cl-1) !important;
+}
+.mt-240{
+    margin-top: 260px !important;
+    z-index: 9;
+}
+.mt-80{
+    margin-top: 80px;
+}
+
+/* overly css starts */
+.overly2{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0; left: 0;
+    background: var(--overly-2);
+    z-index: -1;
+}
+.overly1{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0; left: 0;
+    background: var(--overly-1);
+    z-index: 1;
+    transition: .3s;
+    transform: scale(0);
+    border: 15px solid rgba(255, 255, 255, 0.5);
+}
+.hover-img{
+    overflow: hidden;
+}
+.hover-img:hover .overly1{
+    transform: scale(.9) !important;
+}
+.overly1 .icon{
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+.overly1 .icon i{
+    width: 40px;
+    height: 40px;
+    border: 1px solid #fff;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    margin-bottom: 20px;
+}
+.overly1 .icon i:hover{
+    background-color: #fff;
+    color: #db0f0f;
+}
+/* overly css ends */
+
+.brand1{
+    color: var(--brand1);
+}
+.fs-60{
+    font-size: 60px;
+}
+nav{
+    z-index: 99;
+}
+.navfixd{
+    background-color: rgb(53, 53, 53, 0.8);
+}
+.clip{
+    clip-path: polygon(20% 0%, 100% 0%, 80% 100%, 0% 100%);
+    background-color: #464646;
+}
+
+/* banner section */
+.banner-item{
+    width: 100%;
+    height: 600px;
+    z-index: -1;
+}
+
+#banner .bg1{
+    background: url(../image/banner-1.jpg) no-repeat center / cover;
+}
+#banner .bg2{
+    background: url(../image/banner-2.jpg) no-repeat center / cover;
+}
+#banner .bg3{
+    background: url(../image/banner-3.jpg) no-repeat center / cover;
+}
+/* banner section ends */
+
+/* slick dotes stats */
+#banner .slick-dots{
+    position: absolute;
+    left: 45%;
+    bottom: 20px;
+    display: flex;
+}
+.slick-dots li.slick-active{
+    background-color: var(--brand1);
+}
+.slick-dots li{
+    width: 15px;
+    height: 15px;
+    margin: 0 5px;
+    background-color: var(--cl2);
+    border-radius: 50%;
+    cursor: pointer;
+}
+.slick-dots button{
+    border: none;
+    outline: none;
+    font-size: 0px;
+}
+/* slick dotes ends */
+
+/* gallery section stats*/
+#gallery{
+    overflow: hidden;
+}
+.bg-overly{
+    position: relative;
+    background: url(../image/gallery-overly.jpg) no-repeat center / cover;
+    padding-top: 20px;
+    width: 100%;
+    z-index: 1;
+}
+.up-1{
+    z-index: -1;
+}
+/* gallery section ends */
+
+/* about section strat */
+#about{
+    overflow: hidden;
+}
+/* about section ends */
+
+/* team section starts */
+.team-item{
+    transition: all linear .4s;
+    overflow: visible;
+    transform: translateY(1rem);
+    margin: 40px 0;
+}
+.team-item:hover{
+    border: 3px solid #ddd;
+    transform: translateY(-2rem);
+}
+.team-item:hover .overly1{
+    transform: scale(.9) !important;
+}
+.hover-show{
+    display: none;
+    transition: .4s;
+}
+.team-item:hover .hover-show{
+    display: block !important;
+}
+.social-icon{
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    flex-direction: column;
+    margin-right: 10px;
+}
+.social-icon .social{
+    width: 40px;
+    height: 40px;
+    border: 1px solid #fff;
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+    margin-bottom: 10px;
+    transition: .3s;
+}
+.social-icon .social:hover{
+    background-color: var(--cl2);
+}
+.social-icon .social:hover a{
+    color: var(--icon) !important;
+}    
+/* team section ends */
+
+/* testimonial section starts */
+#testimonial{
+overflow: hidden;
+}
+.test-bg{
+    position: relative;
+    background: url(../image/testimonial-bg.jpg) no-repeat center / cover;
+    padding: 30px 0;
+    width: 100%;
+    z-index: 1; 
+}
+.test-bg .slick-dots{
+    position: absolute;
+    left: 45%;
+    bottom: -30px;
+    display: flex;
+}
+/* testimonial section ends */
+
+/* membership section starts */
+#membership{
+    overflow: hidden;
+}
+.fs-50{
+    font-size: 50px;
+}
+.fs-30{
+    font-size: 30px;
+}
+.member-bg1{
+    position: relative;
+    background: url(../image/member-bg1.jpg) no-repeat center / cover;
+    z-index: 1; 
+}
+.member-bg2{
+    position: relative;
+    background: url(../image/member-bg2.jpg) no-repeat center / cover;
+    z-index: 1; 
+}
+.member-bg3{
+    position: relative;
+    background: url(../image/member-bg3.jpg) no-repeat center / cover;
+    z-index: 1; 
+}
+.member-hover:hover .btn1{
+    background-color: var(--brand2) !important;
+    color: #fff !important;
+}
+.member-hover:hover .member-header{
+    background-color: var(--brand2) !important;
+    color: #fff;
+}
+.member-header{
+    background-color: #dddddd;
+    color: #000;
+    transition: all linear .4s !important;
+}
+.member-text{
+    background-color: var(--cl2);
+    color: var(--cl-1);
+}
+.btn1{
+    background-color: #ddd;
+    color: var(--cl-1) !important;
+    cursor: pointer;
+    transition: all linear .4s !important;
+}
+/* membership section ends */
+
+/* work section starts */
+.work-content{
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+justify-content: center;
+}
+/* work section ends */
+
+/* classes section starts */
+.class-days{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    justify-content: center;
+    background-color: #ddd;
+}
+.class-days .day{
+   cursor: pointer;
+}
+.class-days .day:hover{
+ border-bottom: 2px solid red;
+
+}
+
+.days-work{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    justify-content: center;
+    grid-gap: 5px;
+}
+.days-work .day-item{
+    background-color: #ddd;
+    transition: all linear .4s;
+}
+.days-work .day-item:hover{
+    background-color: rgb(122, 16, 16) !important;
+    color: var(--cl2) !important;
+    cursor: pointer;
+}
+.Active{
+    background-color: var(--brand2);
+    color: var(--cl2);
+}
+/* classes section ends */
+
+/* footer section stars */
+#contact{
+    overflow: hidden;
+}
+.footer-bg{
+    position: relative;
+    background: url(../image/footer-bg.jpg) no-repeat center / cover;
+    z-index: 1;
+}
+.lh-10{
+    line-height: 20px;
+}
+.fs-20{
+    font-size: 16px !important;
+    font-weight: 700 !important;
+}
+.h-80{
+    height: 80%;
+}
+.picturs{
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(4, 1fr);
+    justify-content: center;
+    grid-gap: 10px;
+}
+.social{
+    width: 40px;
+    height: 40px;
+    border: 1px solid #fff;
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+    transition: .3s;
+    cursor: pointer;
+}
+.social:hover{
+    background-color: var(--brand2);
+    border: 1px solid var(--brand2) !important;
+}
+/* footer section ends */
